@@ -1,0 +1,6 @@
+{
+    "env": {
+        "baseUrl": "https://demoqa.com/automation-practice-form"
+    },
+    "chromeWebSecurity": false
+}
