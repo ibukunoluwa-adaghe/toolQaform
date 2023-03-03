@@ -5,5 +5,9 @@
     "email" : "ibukun@yopmail.com",
     "phoneNumber" : "08063543837",
     "address" : "Opic estate"
+  },
+  "subjectList" : {
+    "subject1": "eng",
+    "subject2": "hist"
   }
 }

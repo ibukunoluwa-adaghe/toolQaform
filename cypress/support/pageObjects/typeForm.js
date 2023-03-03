@@ -14,8 +14,8 @@ class regForm {
     addressField(address) {
         return cy.get('#currentAddress').type(address)
     }
-    // subjectField(subject) {
-    //     return cy.get('.subjects-auto-complete__value-container').type(subject)
-    // }
+    subjectField(subject) {
+        return cy.get('.subjects-auto-complete__value-container').type(subject)
+    }
 }
 export default regForm;
