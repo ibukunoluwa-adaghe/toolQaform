@@ -15,5 +15,6 @@ class regButton {
         return cy.get('#city > .css-yk16xz-control > .css-1wy0on6 > .css-tlfecz-indicatorContainer > .css-19bqh2r').click({force: true})
     }
 
-}
+} 
 export default regButton;
+

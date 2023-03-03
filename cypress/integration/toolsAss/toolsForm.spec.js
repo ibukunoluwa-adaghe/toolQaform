@@ -1,7 +1,7 @@
 /// <reference types = 'cypress' />
 
-import regForm from "../../support/pageObjects/typeForm";
-import regButton from "../../support/pageObjects/buttonForm";
+import regForm from "../../support/toolsPageObjects/typeForm";
+import regButton from "../../support/toolsPageObjects/buttonForm";
 
 const type = new regForm();
 const button = new regButton();
@@ -13,7 +13,7 @@ beforeEach(() => {
 
 describe ('myForm Module', function(){
     it('My registration form', () => {
-        cy.visit(Cypress.env('baseUrl'))
+        cy.visit(Cypress.env('toolsQAbaseUrl'))
 
         type.firstNameField(data.validFormDetails.firstName)
         type.lastNameField(data.validFormDetails.lastName)
