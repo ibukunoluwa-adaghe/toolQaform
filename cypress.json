@@ -1,6 +1,7 @@
 {
     "env": {
-        "baseUrl": "https://demoqa.com/automation-practice-form"
+        "toolsQAbaseUrl": "https://demoqa.com/automation-practice-form",
+        "XYZbaseUrl": "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"
     },
     "chromeWebSecurity": false
 }
