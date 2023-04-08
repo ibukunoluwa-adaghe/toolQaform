@@ -168,7 +168,10 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "cypress:open": "cypress open",
+    "XYZ": "npm run test -- --headed --browser chrome --spec \"cypress/integration/XYZBank/testGlobal.spec.js",
+    "toolsqa": "npm run test -- --headed --browser chrome --spec \"cypress/integration/toolsAss/toolsForm.spec.js"
   },
   "author": "ibukunoluwa",
   "license": "ISC",
