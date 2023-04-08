@@ -20,10 +20,10 @@ const firstname = minput.random()
 describe ('Customer Profile', () => {
     it ('Verify user can select name', () => {
         cy.visit(Cypress.env("XYZbaseUrl"))
-        cbutton.customerButton()
+        cbutton.buttonObject('Customer Login')
         cbutton.nameDropdown()
         cy.wait(1000)
-        cbutton.login()
+        cbutton.buttonObject('Login')
     });
     it ('Verify user can view customer options', () => {
         cy.get('[ng-class="btnClass1"]').should('contain.text','Transactions')
@@ -37,12 +37,12 @@ describe ('Customer Profile', () => {
 describe ('Bank Manager Profile', () => {
     it ('Verify Bank Manager can login', () => {
         cy.visit(Cypress.env("XYZbaseUrl"))
-        mbutton.managerButton()
+        mbutton.buttonObject('Bank Manager Login')
         cy.wait(1000)
     });
     it ('Verify new customer can be added', () => {
         // click add customer section
-        mbutton.addCustomerSection()
+        mbutton.buttonObject('Add Customer')
         cy.wait(1000)
 
         minput.firstName(firstname)
@@ -59,7 +59,7 @@ describe ('Bank Manager Profile', () => {
     });
     it ('Verify account can be opened for new user', () => {
         // click open account section
-        mbutton.openAccount()
+        mbutton.buttonObject('Open Account')
         cy.wait(1000)
 
         // select input from dropdown
@@ -69,7 +69,7 @@ describe ('Bank Manager Profile', () => {
         mbutton.currencyDropdown()
 
         //click process button
-        mbutton.processButton()
+        mbutton.buttonObject('Process')
         cy.wait(1000)
     });
     it ('Verify new user is visible on customers list page', () => {
@@ -80,20 +80,20 @@ describe ('Bank Manager Profile', () => {
     cy.wait(1000)
     });
     it ('Verify bank manager can search by users', () => {
-        cy.get('.form-control').type(firstname)
+        minput.searchBar().type(firstname)
         cy.get('tr.ng-scope > :nth-child(1)').should('have.text',firstname)
         cy.wait(1000)
-        cy.get('.form-control').clear()
+        minput.searchBar().clear()
 
-        cy.get('.form-control').type(lastname)
+        minput.searchBar().type(lastname)
         cy.get('tr.ng-scope > :nth-child(2)').should('have.text',lastname)
         cy.wait(1000)
-        cy.get('.form-control').clear()
+        minput.searchBar().clear()
 
-        cy.get('.form-control').type(code)
+        minput.searchBar().type(code)
         cy.get('tr.ng-scope > :nth-child(3)').should('have.text',code)
         cy.wait(1000)
-        cy.get('.form-control').clear()
+        minput.searchBar().clear()
     });    
     it ('Verify user can be deleted from customers list', () => {
     // delete new entry

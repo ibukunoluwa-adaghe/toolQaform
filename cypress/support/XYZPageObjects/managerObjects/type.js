@@ -21,6 +21,10 @@ class input {
     postCode(code) {
         return cy.get(':nth-child(3) > .form-control').type(code)
     }
+
+    searchBar() {
+        return cy.get('.form-control')
+    }
 }
 
 export default input;
